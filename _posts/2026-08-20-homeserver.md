@@ -81,19 +81,19 @@ openssl genrsa -aes256 -out ca-key.pem 4096
 openssl req -new -x509 -sha256 -days 365 -key ca-key.pem -out ca.pem
 ```
 #### Create certificate for our service
-- First, we need a key
+First, we need a key
 ```bash
 openssl genrsa -out cert-key.pem 4096
 ```
-- Then we will create a CSR for our service
+Then we will create a CSR for our service
 ```bash
 openssl req -sha256 -new -key cert-key.pem -out cert.csr
 ```
-- Then we need a `extfile.cnf` with all the alternative names for our services (domain, subdomain)
+Then we need a `extfile.cnf` with all the alternative names for our services (domain, subdomain)
 ```
 subjectAltName = DNS:yourdomain.com,DNS:www.yourdomain.com,IP:192.168.1.1
 ```
-- Now we can create a self-signed certificate for our service, for Apple devices we should only generate certificates with validity less than 300 days or else it won't be accepted by the device
+Now we can create a self-signed certificate for our service, for Apple devices we should only generate certificates with validity less than 300 days or else it won't be accepted by the device
 ```bash
 openssl x509 -req -sha256 -days 365 -in cert.csr -CA ca.pem -CAkey ca-key.pem -out cert.pem -extfile extfile.cnf -CAcreateserial
 ```

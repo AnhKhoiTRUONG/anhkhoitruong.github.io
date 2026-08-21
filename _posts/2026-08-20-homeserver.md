@@ -41,7 +41,7 @@ And now on the client side
     [Peer]
     PublicKey = the public key of the server
     AllowedIPs = 0.0.0.0/0
-    Endpoint = Public_IP_of_the_server:51820
+    Endpoint = Public_IP_of_the_server:the_port_you_want_to_use
             
 
 And now to we need to enable this Wireguard network interface on both side

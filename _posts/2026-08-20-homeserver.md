@@ -10,6 +10,10 @@ I want to keep my server simple so that I don't spend too much time debugging st
 - Reverse proxy with self signed certificates for HTTPS
 - Some other services like media, photos backup...
 
+Why VPN? Because expose a port on the home's router is risky so a VPN will hide this door behind a secured tunnel so that only we and the people we want can connect it.
+
+Why reverse proxy and self-signed certificates? Because some services need HTTPS and I want to keep things local but the most important is I don't want to pay for a domain... But like that we can learn how to do certificates by ourself.
+
 ### Wireguard configuration
 
 Why Wireguard? Many says because it's fast, light... I chose it because simply because I think it's "kinda" hard to begin with and hope that I learned new things after doing this so let's dive in
